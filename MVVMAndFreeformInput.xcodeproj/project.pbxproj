@@ -12,6 +12,7 @@
 		F4C834E32D945B2900EDD894 /* PowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C834DE2D945B2900EDD894 /* PowerView.swift */; };
 		F4C834E42D945B2900EDD894 /* MVVMAndFreeformInputApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C834DF2D945B2900EDD894 /* MVVMAndFreeformInputApp.swift */; };
 		F4C834E92D945C9800EDD894 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C834E82D945C9000EDD894 /* Power.swift */; };
+		F4C834EB2D945D4A00EDD894 /* PowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C834EA2D945D4200EDD894 /* PowerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		F4C834DE2D945B2900EDD894 /* PowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerView.swift; sourceTree = "<group>"; };
 		F4C834DF2D945B2900EDD894 /* MVVMAndFreeformInputApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMAndFreeformInputApp.swift; sourceTree = "<group>"; };
 		F4C834E82D945C9000EDD894 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		F4C834EA2D945D4200EDD894 /* PowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		F4C834E72D945B5200EDD894 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F4C834EA2D945D4200EDD894 /* PowerViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C834EB2D945D4A00EDD894 /* PowerViewModel.swift in Sources */,
 				F4C834E32D945B2900EDD894 /* PowerView.swift in Sources */,
 				F4C834E92D945C9800EDD894 /* Power.swift in Sources */,
 				F4C834E42D945B2900EDD894 /* MVVMAndFreeformInputApp.swift in Sources */,
