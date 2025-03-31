@@ -16,7 +16,7 @@ struct PowerView: View {
     // Holds the view model, to track current state of
     // data within the app
     @State var viewModel = PowerViewModel()
- 
+    
     // MARK: Computed properties
     var body: some View {
         VStack {
@@ -42,53 +42,64 @@ struct PowerView: View {
                         }
                         else {
                             Text("\(power.base.formatted())")
-                            .font(.system(size: 96))
+                                .font(.system(size: 96))
                             
                             Text("\(power.exponent)")
-                            .font(.system(size: 44))
-                            }
-                       
+                                .font(.system(size: 44))
+                        }
+                        
                     }
                     HStack {
- 
+                        
                         Text("=")
                             .font(.system(size: 96))
- 
-                        Text("\(power.result.formatted())")
-                            .font(.system(size: 96))
+                        if power.exponent >= 0 {
+                            Text("\(power.result.formatted())")
+                                .font(.system(size: 96))
+                        }
+                        else {
+                            VStack(spacing:0){
+                                Text("1")
+                                    .font(.system(size: 96))
+                                Rectangle()
+                                    .frame(height:3)
+                                Text("\(power.result.formatted())")
+                                    .font(.system(size: 96))
+                            }
+                        }
+                        
                     }
+                    
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                    .frame(height: 300)
+                    
                 }
-                .lineLimit(1)
-                .minimumScaleFactor(0.5)
-                .frame(height: 300)
- 
-            } else {
-                
-                // Show a message indicating that we are
-                // awaiting reasonable input
-                ContentUnavailableView(
-                    "Unable to evaluate power",
-                    systemImage: "gear.badge.questionmark",
-                    description: Text(viewModel.recoverySuggestion)
-                )
-                .frame(height: 300)
             }
-            
-            // INPUT
-            TextField("Base", text: $viewModel.providedBase)
-                .textFieldStyle(.roundedBorder)
-            
-            TextField("Exponent", text: $viewModel.providedExponent)
-                .textFieldStyle(.roundedBorder)
- 
-            // Extra space at bottom
-            Spacer()
+                else {
+                    // Show a message indicating that we are
+                    // awaiting reasonable input
+                    ContentUnavailableView(
+                        "Unable to evaluate power",
+                        systemImage: "gear.badge.questionmark",
+                        description: Text(viewModel.recoverySuggestion)
+                    )
+                    .frame(height: 300)
+                }
+                
+                // INPUT
+                TextField("Base", text: $viewModel.providedBase)
+                    .textFieldStyle(.roundedBorder)
+                
+                TextField("Exponent", text: $viewModel.providedExponent)
+                    .textFieldStyle(.roundedBorder)
+                
+                // Extra space at bottom
+                Spacer()
+            }
+                .padding()
         }
-        .padding()
-    }
- 
 }
- 
 #Preview {
     PowerView()
 }

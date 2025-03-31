@@ -43,18 +43,15 @@ struct Power {
         if exponent == 0 {
             return 1
         }
-        
-        // Repeatedly multiply the base by itself
-        // as many more times as needed
-        for _ in 1...exponent {
-            solution *= base
-        }
-            for _ in -1...exponent{
-                1 / solution *= base
+        else {
+            // Repeatedly multiply the base by itself
+            // as many more times as needed
+            for _ in 1...abs(exponent) {
+                solution *= base
+            }
+                
+            }
             
-        }
-        
-        
         
         // Return the solution
         return solution
