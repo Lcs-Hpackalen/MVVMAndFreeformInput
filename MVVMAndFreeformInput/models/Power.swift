@@ -49,6 +49,10 @@ struct Power {
         for _ in 1...exponent {
             solution *= base
         }
+            for _ in -1...exponent{
+                1 / solution *= base
+            
+        }
         
         
         

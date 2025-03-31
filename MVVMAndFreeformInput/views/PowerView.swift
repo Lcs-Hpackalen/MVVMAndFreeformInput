@@ -33,12 +33,21 @@ struct PowerView: View {
                 // we write a power on paper in math class
                 HStack(alignment: .center) {
                     HStack(alignment: .top) {
-                        
-                        Text("\(power.base.formatted())")
+                        if power.base < 0 {
+                            Text("(\(power.base.formatted()))")
+                                .font(.system(size: 96))
+                            
+                            Text("\(power.exponent)")
+                                .font(.system(size: 44))
+                        }
+                        else {
+                            Text("\(power.base.formatted())")
                             .font(.system(size: 96))
-                        
-                        Text("\(power.exponent)")
+                            
+                            Text("\(power.exponent)")
                             .font(.system(size: 44))
+                            }
+                       
                     }
                     HStack {
  
